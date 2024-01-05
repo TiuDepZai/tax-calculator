@@ -23,12 +23,12 @@ Broken down into 3 parts
 
 ### Installation
 
-```bash
-# Clone the repository
-git clone https://github.com/your-username/your-repository.git
+```Intellij
+# Download the repository
 
-# Change into the project directory
-cd your-repository
+# Run Maven install
+
+# App is in target
 
 ```
 
