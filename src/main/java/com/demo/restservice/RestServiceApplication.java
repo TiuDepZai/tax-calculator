@@ -1,6 +1,7 @@
 package com.demo.restservice;
 
 import com.demo.restservice.model.Person;
+import com.demo.restservice.service.PersonService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

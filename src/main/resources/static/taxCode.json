@@ -1,0 +1,27 @@
+[
+  {
+    "threshold": 0,
+    "percentage": 0,
+    "initial": 0
+  },
+  {
+    "threshold": 18200,
+    "percentage": 19,
+    "initial": 0
+  },
+  {
+    "threshold": 37000,
+    "percentage": 32.5,
+    "initial": 3572
+  },
+  {
+    "threshold": 87000,
+    "percentage": 37,
+    "initial": 19822
+  },
+  {
+    "threshold": 180000,
+    "percentage": 45,
+    "initial": 54232
+  }
+]

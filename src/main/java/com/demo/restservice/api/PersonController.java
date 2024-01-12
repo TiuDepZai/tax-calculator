@@ -1,13 +1,13 @@
 package com.demo.restservice.api;
 
+import com.demo.restservice.model.Payslip;
 import com.demo.restservice.model.Person;
-import com.demo.restservice.model.Response;
 import com.demo.restservice.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @RequestMapping("api/v1/person")
@@ -22,6 +22,7 @@ public class PersonController {
           this.personService = personService;
     }
 
+
     @PostMapping
     public void addPerson(@RequestBody Person person){
         personService.addPerson(person);
@@ -30,6 +31,11 @@ public class PersonController {
     @GetMapping
     public List<Person> getAllPeople(){
         return personService.getAllPeople();
+    }
+
+    @GetMapping("payslip/{id}")
+    public Optional<Payslip> getPaySlipById(@PathVariable("id") UUID id){
+        return personService.getPaySlipById(id);
     }
 
     @GetMapping(path = "{id}")
@@ -47,9 +53,5 @@ public class PersonController {
         personService.updatePerson(id, personToUpdate);
     }
 
-    @GetMapping("/pay-info")
-    public List<Response> getAllReponses(){
-        return personService.getAllResponses();
-    }
 
 }

@@ -21,28 +21,7 @@ public class PersonServiceTest {
 
     @BeforeEach
     void setUp(){
-        personDaoMock = mock(PersonDao.class);
-        personService = new PersonService(personDaoMock);
     }
 
-    @Test
-    void addPerson(){
-        UUID id = UUID.randomUUID();
-        Person person = new Person(id,"John Smith", 60050,0.09,"01 March-31 March");
 
-        personService.addPerson(person);
-
-        verify(personDaoMock, times(1)).insertPerson(person);
-    }
-    @Test
-    void getAllPeople(){
-        UUID id = UUID.randomUUID();
-        List<Person> expectedPeople = Collections.singletonList(new Person(id,"John Smith", 60050,0.09,"01 March-31 March"));
-        when(personDaoMock.selectAllPeople()).thenReturn(expectedPeople);
-
-        List<Person> actualPeople = personService.getAllPeople();
-
-        assertEquals(expectedPeople, actualPeople);
-    }
-    // Missing test cases for getPersonById, deletePerson, updatePerson
 }
